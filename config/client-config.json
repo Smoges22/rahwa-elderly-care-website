@@ -1,0 +1,53 @@
+{
+  "businessName": "{{BUSINESS_NAME}}",
+  "displayName": "{{DISPLAY_NAME}}",
+  "tagline": "{{TAGLINE}}",
+  "website": "{{WEBSITE_URL}}",
+  "address": "{{ADDRESS}}",
+  "city": "{{CITY}}",
+  "state": "{{STATE}}",
+  "zip": "{{ZIP}}",
+  "mainPhone": "{{MAIN_PHONE}}",
+  "alternatePhone": "{{ALTERNATE_PHONE}}",
+  "email": "{{EMAIL}}",
+  "replyToEmail": "{{REPLY_TO_EMAIL}}",
+  "formEndpoint": "{{FORM_ENDPOINT}}",
+  "googleMapEmbed": "{{GOOGLE_MAP_EMBED}}",
+  "ownerNames": ["{{OWNER_1_NAME}}", "{{OWNER_2_NAME}}"],
+  "ownerBios": ["{{OWNER_1_BIO}}", "{{OWNER_2_BIO}}"],
+  "services": [
+    "Personal care",
+    "Medication support",
+    "Meals and nutrition",
+    "Mobility assistance",
+    "Activities",
+    "Family communication"
+  ],
+  "careSpecialties": [
+    "Dementia support",
+    "Diabetes support",
+    "Hospice coordination",
+    "Fall prevention",
+    "Respite care",
+    "Long-term care"
+  ],
+  "primaryColor": "#159aa5",
+  "accentColor": "#d9822b",
+  "logoPaths": {
+    "horizontal": "assets/logo/logo-horizontal.svg",
+    "mark": "assets/logo/logo-mark.svg",
+    "favicon": "assets/logo/favicon.svg"
+  },
+  "imagePaths": {
+    "hero": "assets/images/hero-home.svg",
+    "exterior": "assets/images/home-exterior.svg",
+    "livingRoom": "assets/images/living-room.svg",
+    "bedroom": "assets/images/bedroom.svg",
+    "dining": "assets/images/dining-area.svg",
+    "bathroom": "assets/images/accessible-bathroom.svg",
+    "outdoor": "assets/images/outdoor-space.svg",
+    "owner1": "assets/team/owner-1.svg",
+    "owner2": "assets/team/owner-2.svg"
+  },
+  "socialPreviewImage": "assets/social/social-preview.svg"
+}

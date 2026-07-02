@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule a Tour | {{DISPLAY_NAME}}</title>
+  <meta name="description" content="Schedule a tour with {{BUSINESS_NAME}}.">
+  <link rel="canonical" href="{{WEBSITE_URL}}/schedule-tour/">
+  <meta property="og:image" content="{{WEBSITE_URL}}/assets/social/social-preview.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="sticky top-0 z-50 bg-white-90 backdrop-blur border site-header" data-mobile-nav><nav class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 py-4 flex items-center justify-between gap-4"><a href="../index.html"><img class="brand-logo brand-logo-horizontal" src="../assets/logo/logo-horizontal.svg" alt="{{BUSINESS_NAME}} logo"></a><div class="flex items-center gap-5 overflow-x-auto mobile-nav desktop-nav"><a class="nav-link" href="../index.html">Home</a><a class="nav-link" href="../about/">About</a><a class="nav-link" href="../services/">Services</a><a class="nav-link" href="../gallery/">Gallery</a><a class="nav-link" href="../contact/">Contact</a></div><a class="btn btn-primary mobile-full desktop-cta" href="../schedule-tour/">Schedule a Tour</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button></nav><div class="premium-mobile-menu" id="mobile-menu" hidden><a class="mobile-menu-link" href="../index.html">Home</a><a class="mobile-menu-link" href="../about/">About</a><a class="mobile-menu-link" href="../services/">Services</a><a class="mobile-menu-link" href="../gallery/">Gallery</a><a class="mobile-menu-link" href="../contact/">Contact</a><a class="mobile-menu-link mobile-menu-cta is-active" href="../schedule-tour/">Schedule a Tour</a></div></header>
+  <main>
+    <section class="interior-hero bg-gray-50"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 py-20"><span class="section-label">Schedule a Tour</span><h1 class="mt-4 text-4xl md-text-6xl font-extrabold leading-tight">Tour request form for future AFH clients.</h1><p class="mt-6 text-lg text-muted max-w-3xl">Connect this form to Formspree or the reusable Google Apps Script automation endpoint.</p></div></section>
+    <section class="py-20 bg-white"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 grid lg-grid-cols-2 gap-10">
+      <form class="tour-command-card rounded-3xl border bg-white shadow-card p-6" action="{{FORM_ENDPOINT}}" method="post" data-formspree-form>
+        <input type="hidden" name="leadType" value="Schedule Tour">
+        <label>Full Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email"></label>
+        <label>Phone<input name="phone" autocomplete="tel" required></label>
+        <label>Preferred Date<input name="preferredDate" type="date"></label>
+        <label>Preferred Time<input name="preferredTime" type="text" placeholder="Morning, afternoon, or a specific time"></label>
+        <label>Who are you looking for care for?<textarea name="message" rows="5"></textarea></label>
+        <input type="hidden" name="websitePage" value="{{WEBSITE_URL}}/schedule-tour/">
+        <button class="btn btn-primary" type="submit">Request Tour</button>
+        <p class="form-status mt-4 text-muted" hidden>Thank you. Your tour request has been sent.</p>
+      </form>
+      <aside class="decision-checklist"><article class="rounded-3xl border bg-white shadow-card p-6"><h2 class="text-3xl font-extrabold">Before the tour</h2><p class="mt-4 text-muted">Families may want to ask about availability, care level, daily routine, staffing, meals, safety, and communication preferences.</p><a class="mt-6 btn btn-secondary" href="tel:{{MAIN_PHONE}}">Call {{MAIN_PHONE}}</a></article></aside>
+    </div></section>
+  </main>
+  <footer class="site-footer bg-ink text-white py-12"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 footer-bottom"><p>&copy; 2026 {{BUSINESS_NAME}}.</p><p><a href="../privacy-policy/">Privacy Policy</a> <span>|</span> <a href="../terms/">Terms</a></p></div></footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>
