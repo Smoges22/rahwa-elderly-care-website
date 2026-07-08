@@ -1,4 +1,5 @@
 (function () {
+  // Paste the deployed Google Apps Script Web App URL here after completing automation/GOOGLE-SHEET-FORM-SETUP.md.
   const GOOGLE_SCRIPT_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 
   function initMobileNav() {
@@ -40,10 +41,24 @@
           return;
         }
         const data = Object.fromEntries(new FormData(form).entries());
+        const formType = form.dataset.formType || "Website Inquiry";
         const payload = {
-          leadType: form.dataset.formType || "Website Inquiry",
+          formType,
+          leadType: formType,
+          sourcePage: data.source || "",
+          pageUrl: window.location.href,
           websitePage: window.location.href,
+          userAgent: navigator.userAgent,
           submittedAt: new Date().toISOString(),
+          fullName: data.name || "",
+          phone: data.phone || "",
+          email: data.email || "",
+          relationshipToResident: data.relationship || "",
+          careTimeline: data.timeline || "",
+          preferredTourDate: data.preferredDate || "",
+          preferredTourTime: data.preferredTime || "",
+          residentCareNeeds: data.careNeeds || "",
+          message: data.message || "",
           ...data
         };
         if (button) {
