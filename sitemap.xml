@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>{{WEBSITE_URL}}/</loc></url>
-  <url><loc>{{WEBSITE_URL}}/about/</loc></url>
-  <url><loc>{{WEBSITE_URL}}/services/</loc></url>
-  <url><loc>{{WEBSITE_URL}}/gallery/</loc></url>
-  <url><loc>{{WEBSITE_URL}}/contact/</loc></url>
-  <url><loc>{{WEBSITE_URL}}/schedule-tour/</loc></url>
-  <url><loc>{{WEBSITE_URL}}/privacy-policy/</loc></url>
-  <url><loc>{{WEBSITE_URL}}/terms/</loc></url>
+  <url><loc>/</loc></url>
+  <url><loc>/about/</loc></url>
+  <url><loc>/services/</loc></url>
+  <url><loc>/gallery/</loc></url>
+  <url><loc>/schedule-tour/</loc></url>
+  <url><loc>/contact/</loc></url>
+  <url><loc>/privacy-policy/</loc></url>
+  <url><loc>/terms/</loc></url>
 </urlset>

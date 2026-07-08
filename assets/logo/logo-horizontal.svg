@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="180" viewBox="0 0 720 180" role="img" aria-label="Adult Family Home logo placeholder">
-  <rect width="720" height="180" rx="28" fill="#ffffff"/>
-  <circle cx="88" cy="90" r="54" fill="#159aa5"/>
-  <path d="M52 99 L88 62 L124 99 V130 H62 V99 Z" fill="#ffffff"/>
-  <path d="M84 130 V103 H104 V130" fill="#d9822b"/>
-  <text x="170" y="78" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#071c2f">{{DISPLAY_NAME}}</text>
-  <text x="170" y="122" font-family="Arial, sans-serif" font-size="22" fill="#5f6f78">Adult Family Home</text>
-</svg>

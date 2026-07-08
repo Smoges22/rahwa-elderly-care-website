@@ -1,226 +1,123 @@
 (function () {
-  var lightbox = null;
-  var lightboxImage = null;
-  var closeButton = null;
-  var previousFocus = null;
-  var emptyImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
+  const GOOGLE_SCRIPT_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 
-  function getLargeImageUrl(image) {
-    var source = image.currentSrc || image.src;
-    if (!source) {
-      return "";
-    }
-    return source.replace(/-(480|960|1440)(\.jpe?g)$/i, "$2");
-  }
-
-  function closeLightbox() {
-    if (!lightbox || lightbox.hidden) {
-      return;
-    }
-    lightbox.hidden = true;
-    document.body.classList.remove("lightbox-open");
-    lightboxImage.src = emptyImage;
-    lightboxImage.removeAttribute("alt");
-    if (previousFocus && typeof previousFocus.focus === "function") {
-      previousFocus.focus();
-    }
-  }
-
-  function openLightbox(image) {
-    if (!lightbox || !lightboxImage) {
-      return;
-    }
-    previousFocus = document.activeElement;
-    lightboxImage.src = getLargeImageUrl(image);
-    lightboxImage.alt = image.alt || "Expanded home photo";
-    lightbox.hidden = false;
-    document.body.classList.add("lightbox-open");
-    closeButton.focus();
-  }
-
-  function buildLightbox() {
-    lightbox = document.createElement("div");
-    lightbox.className = "image-lightbox";
-    lightbox.hidden = true;
-    lightbox.setAttribute("role", "dialog");
-    lightbox.setAttribute("aria-modal", "true");
-    lightbox.setAttribute("aria-label", "Expanded image preview");
-    lightbox.innerHTML = '<button class="image-lightbox-close" type="button" aria-label="Close expanded image">&times;</button><div class="image-lightbox-frame"><img alt=""></div>';
-    document.body.appendChild(lightbox);
-    closeButton = lightbox.querySelector(".image-lightbox-close");
-    lightboxImage = lightbox.querySelector("img");
-    lightboxImage.src = emptyImage;
-
-    closeButton.addEventListener("click", closeLightbox);
-    lightbox.addEventListener("click", function (event) {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
+  function initMobileNav() {
+    const header = document.querySelector("[data-mobile-nav]");
+    if (!header) return;
+    const button = header.querySelector(".mobile-menu-toggle");
+    const menu = header.querySelector("#mobile-menu");
+    if (!button || !menu) return;
+    button.addEventListener("click", () => {
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!isOpen));
+      button.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+      menu.hidden = isOpen;
+      menu.classList.toggle("is-open", !isOpen);
     });
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeLightbox();
+    menu.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open navigation menu");
+        menu.hidden = true;
+        menu.classList.remove("is-open");
       }
     });
   }
 
-  function enhanceImages() {
-    var images = document.querySelectorAll("main picture img");
-    images.forEach(function (image) {
-      image.classList.add("js-lightbox-image");
-      image.setAttribute("tabindex", "0");
-      image.setAttribute("role", "button");
-      image.setAttribute("aria-label", "Open image fullscreen: " + (image.alt || "home photo"));
-      image.addEventListener("click", function () {
-        openLightbox(image);
-      });
-      image.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          openLightbox(image);
-        }
-      });
-    });
-  }
-
-  function enhanceFormspreeForms() {
-    var forms = document.querySelectorAll("[data-formspree-form]");
-    forms.forEach(function (form) {
-      form.addEventListener("submit", function (event) {
-        if (!window.fetch) {
+  function initForms() {
+    document.querySelectorAll("[data-lead-form]").forEach((form) => {
+      const status = form.querySelector(".form-status");
+      const button = form.querySelector("button[type='submit']");
+      const originalText = button ? button.textContent : "";
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          if (status) {
+            status.textContent = "Please complete the required fields.";
+            status.classList.add("error");
+          }
           return;
         }
-        event.preventDefault();
-        var data = new FormData(form);
-        var status = form.querySelector(".form-status");
-        var submitButton = form.querySelector("[type='submit']");
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = "Sending...";
+        const data = Object.fromEntries(new FormData(form).entries());
+        const payload = {
+          leadType: form.dataset.formType || "Website Inquiry",
+          websitePage: window.location.href,
+          submittedAt: new Date().toISOString(),
+          ...data
+        };
+        if (button) {
+          button.disabled = true;
+          button.textContent = "Sending...";
         }
-        fetch(form.action, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" }
-        }).then(function (response) {
-          if (!response.ok) {
-            throw new Error("Form submission failed");
+        if (status) {
+          status.textContent = "";
+          status.classList.remove("error");
+        }
+        try {
+          if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("PASTE_GOOGLE_APPS_SCRIPT")) {
+            await new Promise((resolve) => setTimeout(resolve, 450));
+            form.reset();
+            if (status) status.textContent = "Thanks. This local preview is working. Add the Google Apps Script Web App URL to send submissions to the sheet.";
+            return;
           }
-          form.reset();
-          if (status) {
-            status.hidden = false;
-          }
-        }).catch(function () {
-          HTMLFormElement.prototype.submit.call(form);
-        }).finally(function () {
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = submitButton.dataset.originalText || "Send Message";
-          }
-        });
-      });
-      var submitButton = form.querySelector("[type='submit']");
-      if (submitButton) {
-        submitButton.dataset.originalText = submitButton.textContent;
-      }
-    });
-  }
-
-  function enhanceMobileNavigation() {
-    var headers = document.querySelectorAll("[data-mobile-nav]");
-    headers.forEach(function (header) {
-      var button = header.querySelector(".mobile-menu-toggle");
-      var menu = header.querySelector(".premium-mobile-menu");
-      var closeTimer;
-      if (!button || !menu) {
-        return;
-      }
-      menu.setAttribute("aria-hidden", "true");
-
-      function setOpen(isOpen) {
-        window.clearTimeout(closeTimer);
-        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-        menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
-        if (isOpen) {
-          menu.hidden = false;
-          requestAnimationFrame(function () {
-            menu.classList.add("is-open");
+          const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload)
           });
-        } else {
-          menu.classList.remove("is-open");
-          closeTimer = window.setTimeout(function () {
-            if (button.getAttribute("aria-expanded") !== "true") {
-              menu.hidden = true;
-            }
-          }, 220);
-        }
-      }
-
-      button.addEventListener("click", function (event) {
-        event.stopPropagation();
-        setOpen(button.getAttribute("aria-expanded") !== "true");
-      });
-
-      menu.addEventListener("click", function (event) {
-        if (event.target.closest("a")) {
-          setOpen(false);
-        }
-      });
-
-      document.addEventListener("pointerdown", function (event) {
-        if (!header.contains(event.target)) {
-          setOpen(false);
-        }
-      });
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && button.getAttribute("aria-expanded") === "true") {
-          setOpen(false);
-          button.focus();
+          if (!response.ok) throw new Error("Submission failed");
+          form.reset();
+          if (status) status.textContent = "Thank you. Your message has been sent.";
+        } catch (error) {
+          if (status) {
+            status.textContent = "Something went wrong. Please call Rahwa directly at (206) 489-8822.";
+            status.classList.add("error");
+          }
+        } finally {
+          if (button) {
+            button.disabled = false;
+            button.textContent = originalText;
+          }
         }
       });
     });
   }
 
-  function enhanceScrollReveal() {
-    var targets = document.querySelectorAll("main section, .care-overview-card, .service-detail-card, .tour-command-card, .decision-checklist article, .quick-contact-card, .service-card, .clinical-card, .care-cta-band, .conversion-band");
-    if (!targets.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
+  function initLightbox() {
+    const images = document.querySelectorAll(".gallery-item img, .photo-mosaic img");
+    if (!images.length) return;
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.hidden = true;
+    lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button><img alt="">';
+    document.body.appendChild(lightbox);
+    const lightboxImg = lightbox.querySelector("img");
+    const close = lightbox.querySelector("button");
+    function open(img) {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "Expanded Rahwa Elderly Care photo";
+      lightbox.hidden = false;
+      close.focus();
     }
-    targets.forEach(function (target) {
-      target.classList.add("reveal-on-scroll");
-    });
-    if (!("IntersectionObserver" in window)) {
-      targets.forEach(function (target) {
-        target.classList.add("is-visible");
-      });
-      return;
+    function hide() {
+      lightbox.hidden = true;
+      lightboxImg.removeAttribute("src");
     }
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    targets.forEach(function (target) {
-      observer.observe(target);
+    images.forEach((img) => {
+      const trigger = img.closest("button") || img;
+      trigger.addEventListener("click", () => open(img));
+    });
+    close.addEventListener("click", hide);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) hide();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") hide();
     });
   }
 
-  function init() {
-    buildLightbox();
-    enhanceImages();
-    enhanceFormspreeForms();
-    enhanceMobileNavigation();
-    enhanceScrollReveal();
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+  initMobileNav();
+  initForms();
+  initLightbox();
 })();

@@ -3,39 +3,113 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact {{DISPLAY_NAME}}</title>
-  <meta name="description" content="Contact {{BUSINESS_NAME}} in {{CITY}}, {{STATE}}.">
-  <link rel="canonical" href="{{WEBSITE_URL}}/contact/">
-  <meta property="og:image" content="{{WEBSITE_URL}}/assets/social/social-preview.svg">
-  <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+  <title>Contact Rahwa Elderly Care | Auburn, WA</title>
+  <meta name="description" content="Contact Rahwa Elderly Care in Auburn, WA to ask questions about adult family home care, room options, and tours.">
+  <link rel="canonical" href="/contact/">
+  <meta property="og:title" content="Contact Rahwa Elderly Care | Auburn, WA">
+  <meta property="og:description" content="Contact Rahwa Elderly Care in Auburn, WA to ask questions about adult family home care, room options, and tours.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/images/rahwa-exterior-front-home.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="../assets/logos/rahwa-logo-icon.png">
+  <link rel="apple-touch-icon" href="../assets/logos/rahwa-logo-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
   <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NursingHome","name":"Rahwa Elderly Care","description":"CNA-led adult family home in Auburn, WA offering compassionate residential care in a warm home setting.","address":{"@type":"PostalAddress","streetAddress":"2011 4th St SE","addressLocality":"Auburn","addressRegion":"WA","postalCode":"98002","addressCountry":"US"},"telephone":"(206) 489-8822","email":"rahwaelderlycare@gmail.com","areaServed":"Auburn, WA","image":"/assets/images/rahwa-exterior-front-home.png"}</script>
 </head>
 <body>
-  <header class="sticky top-0 z-50 bg-white-90 backdrop-blur border site-header" data-mobile-nav><nav class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 py-4 flex items-center justify-between gap-4"><a href="../index.html"><img class="brand-logo brand-logo-horizontal" src="../assets/logo/logo-horizontal.svg" alt="{{BUSINESS_NAME}} logo"></a><div class="flex items-center gap-5 overflow-x-auto mobile-nav desktop-nav"><a class="nav-link" href="../index.html">Home</a><a class="nav-link" href="../about/">About</a><a class="nav-link" href="../services/">Services</a><a class="nav-link" href="../gallery/">Gallery</a><a class="nav-link is-active" href="../contact/">Contact</a></div><a class="btn btn-primary mobile-full desktop-cta" href="../schedule-tour/">Schedule a Tour</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button></nav><div class="premium-mobile-menu" id="mobile-menu" hidden><a class="mobile-menu-link" href="../index.html">Home</a><a class="mobile-menu-link" href="../about/">About</a><a class="mobile-menu-link" href="../services/">Services</a><a class="mobile-menu-link" href="../gallery/">Gallery</a><a class="mobile-menu-link is-active" href="../contact/">Contact</a><a class="mobile-menu-link mobile-menu-cta" href="../schedule-tour/">Schedule a Tour</a></div></header>
-  <main>
-    <section class="interior-hero bg-gray-50"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 py-20"><span class="section-label">Contact</span><h1 class="mt-4 text-4xl md-text-6xl font-extrabold leading-tight">Contact {{DISPLAY_NAME}}</h1><p class="mt-6 text-lg text-muted max-w-3xl">Ask about care fit, room availability, or next steps for a family tour.</p></div></section>
-    <section class="py-20 bg-white">
-      <div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 grid lg-grid-cols-2 gap-10">
-        <form class="rounded-3xl border bg-white shadow-card p-6" action="{{FORM_ENDPOINT}}" method="post" data-formspree-form>
-          <input type="hidden" name="leadType" value="Website Contact">
-          <label>Full Name<input name="name" autocomplete="name" required></label>
-          <label>Email<input name="email" type="email" autocomplete="email"></label>
-          <label>Phone<input name="phone" autocomplete="tel"></label>
-          <label>Message<textarea name="message" rows="5" required></textarea></label>
-          <input type="hidden" name="websitePage" value="{{WEBSITE_URL}}/contact/">
-          <button class="btn btn-primary" type="submit">Send Message</button>
-          <p class="form-status mt-4 text-muted" hidden>Thank you. Your message has been sent.</p>
-        </form>
-        <aside class="quick-contact-card rounded-3xl border bg-white shadow-card p-6">
-          <h2 class="text-3xl font-extrabold">Reach the care team</h2>
-          <p class="mt-4 text-muted">{{ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP}}</p>
-          <p class="mt-4"><a href="tel:{{MAIN_PHONE}}">{{MAIN_PHONE}}</a><br><a href="tel:{{ALTERNATE_PHONE}}">{{ALTERNATE_PHONE}}</a><br><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
-          <div class="map-embed-card mt-8 rounded-3xl overflow-hidden border shadow-card"><iframe title="Google map for {{BUSINESS_NAME}}" src="{{GOOGLE_MAP_EMBED}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-        </aside>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-mobile-nav>
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="Rahwa Elderly Care home">
+        <img src="../assets/logos/rahwa-logo-horizontal.png" alt="Rahwa Elderly Care logo">
+      </a>
+      <div class="desktop-nav" aria-label="Primary links">
+        <a class="nav-link" href="../">Home</a>
+        <a class="nav-link" href="../about/">About</a>
+        <a class="nav-link" href="../services/">Services</a>
+        <a class="nav-link" href="../gallery/">Gallery</a>
+        <a aria-current="page" class="nav-link is-active" href="../contact/">Contact</a>
       </div>
+      <a class="btn btn-primary header-cta" href="../schedule-tour/">Schedule a Tour</a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a class="mobile-menu-link" href="../">Home</a>
+      <a class="mobile-menu-link" href="../about/">About</a>
+      <a class="mobile-menu-link" href="../services/">Services</a>
+      <a class="mobile-menu-link" href="../gallery/">Gallery</a>
+      <a class="mobile-menu-link" href="../schedule-tour/">Schedule Tour</a>
+      <a aria-current="page" class="mobile-menu-link is-active" href="../contact/">Contact</a>
+      <a class="mobile-menu-link muted-link" href="../privacy-policy/">Privacy Policy</a>
+      <a class="mobile-menu-link muted-link" href="../terms/">Terms</a>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero"><img src="../assets/images/rahwa-dining-room.png" alt=""><div><span class="eyebrow">Rahwa Elderly Care</span><h1>Contact Rahwa Elderly Care</h1><p>Ask about care fit, rooms, and next steps for your loved one.</p></div></section>
+    <section class="section form-layout">
+      <div>
+        <span class="eyebrow">Get in touch</span>
+        <h2>Call, email, or send a message.</h2>
+        <p>Use the form for general questions or call Rahwa directly for a quicker conversation.</p>
+        <div class="contact-panel"><a href="tel:+12064898822">(206) 489-8822</a><a href="mailto:rahwaelderlycare@gmail.com">rahwaelderlycare@gmail.com</a><span>2011 4th St SE, Auburn, WA 98002</span></div>
+      </div>
+      <form class="lead-form" data-lead-form data-form-type="Contact" novalidate>
+        <input type="hidden" name="source" value="Contact Page">
+        <label><span>Full Name</span><input name="name" type="text" autocomplete="name" required></label>
+        <label><span>Phone</span><input name="phone" type="tel" autocomplete="tel" required></label>
+        <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label><span>Relationship to resident</span><select name="relationship" required><option value="">Select one</option><option>Family member</option><option>Friend</option><option>Professional referral</option><option>Self</option></select></label>
+        <label><span>Care timeline</span><select name="timeline" required><option value="">Select one</option><option>Immediately</option><option>Within 30 days</option><option>1-3 months</option><option>Planning ahead</option></select></label>
+        <label class="full"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
     </section>
+    <section class="map-section">
+      <div class="section-heading">
+        <span class="eyebrow">Visit us in Auburn</span>
+        <h2>Rahwa Elderly Care</h2>
+        <p>2011 4th St SE, Auburn, WA 98002</p>
+      </div>
+      <iframe title="Map to Rahwa Elderly Care in Auburn, Washington" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=2011%204th%20St%20SE%2C%20Auburn%2C%20WA%2098002&output=embed"></iframe>
+    </section>
+
   </main>
-  <footer class="site-footer bg-ink text-white py-12"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 footer-bottom"><p>&copy; 2026 {{BUSINESS_NAME}}.</p><p><a href="../privacy-policy/">Privacy Policy</a> <span>|</span> <a href="../terms/">Terms</a></p></div></footer>
-  <script src="../assets/js/site.js"></script>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/logos/rahwa-logo-horizontal.png" alt="Rahwa Elderly Care logo">
+        <p>Rahwa Elderly Care provides CNA-led, hands-on support in a warm Auburn adult family home with private and shared room options.</p>
+        <p class="design-credit"><a href="https://webdesignsbysam.com" target="_blank" rel="noopener">Website design by Sam</a></p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <a href="tel:+12064898822">(206) 489-8822</a>
+        <a href="mailto:rahwaelderlycare@gmail.com">rahwaelderlycare@gmail.com</a>
+        <span>2011 4th St SE, Auburn, WA 98002</span>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="../about/">About</a>
+        <a href="../services/">Services</a>
+        <a href="../gallery/">Gallery</a>
+        <a href="../schedule-tour/">Schedule Tour</a>
+      </div>
+      <div>
+        <h2>Care & Rooms</h2>
+        <span>CNA-led care</span>
+        <span>4 private rooms</span>
+        <span>2 shared rooms</span>
+        <span>Accessible bathroom features</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Rahwa Elderly Care. All rights reserved.</span>
+      <span><a href="../privacy-policy/">Privacy Policy</a> <a href="../terms/">Terms</a></span>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js" defer></script>
 </body>
 </html>

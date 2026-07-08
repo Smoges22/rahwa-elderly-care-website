@@ -3,27 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery | {{DISPLAY_NAME}}</title>
-  <meta name="description" content="Photo gallery placeholders for {{BUSINESS_NAME}}. Replace with real home photos before launch.">
-  <link rel="canonical" href="{{WEBSITE_URL}}/gallery/">
-  <meta property="og:image" content="{{WEBSITE_URL}}/assets/social/social-preview.svg">
-  <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+  <title>Rahwa Elderly Care Gallery | Auburn Adult Family Home</title>
+  <meta name="description" content="View living spaces, kitchen, dining area, rooms, accessible bathrooms, and patio at Rahwa Elderly Care in Auburn, WA.">
+  <link rel="canonical" href="/gallery/">
+  <meta property="og:title" content="Rahwa Elderly Care Gallery | Auburn Adult Family Home">
+  <meta property="og:description" content="View living spaces, kitchen, dining area, rooms, accessible bathrooms, and patio at Rahwa Elderly Care in Auburn, WA.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/images/rahwa-exterior-front-home.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="../assets/logos/rahwa-logo-icon.png">
+  <link rel="apple-touch-icon" href="../assets/logos/rahwa-logo-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
   <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NursingHome","name":"Rahwa Elderly Care","description":"CNA-led adult family home in Auburn, WA offering compassionate residential care in a warm home setting.","address":{"@type":"PostalAddress","streetAddress":"2011 4th St SE","addressLocality":"Auburn","addressRegion":"WA","postalCode":"98002","addressCountry":"US"},"telephone":"(206) 489-8822","email":"rahwaelderlycare@gmail.com","areaServed":"Auburn, WA","image":"/assets/images/rahwa-exterior-front-home.png"}</script>
 </head>
 <body>
-  <header class="sticky top-0 z-50 bg-white-90 backdrop-blur border site-header" data-mobile-nav><nav class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 py-4 flex items-center justify-between gap-4"><a href="../index.html"><img class="brand-logo brand-logo-horizontal" src="../assets/logo/logo-horizontal.svg" alt="{{BUSINESS_NAME}} logo"></a><div class="flex items-center gap-5 overflow-x-auto mobile-nav desktop-nav"><a class="nav-link" href="../index.html">Home</a><a class="nav-link" href="../about/">About</a><a class="nav-link" href="../services/">Services</a><a class="nav-link is-active" href="../gallery/">Gallery</a><a class="nav-link" href="../contact/">Contact</a></div><a class="btn btn-primary mobile-full desktop-cta" href="../schedule-tour/">Schedule a Tour</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button></nav><div class="premium-mobile-menu" id="mobile-menu" hidden><a class="mobile-menu-link" href="../index.html">Home</a><a class="mobile-menu-link" href="../about/">About</a><a class="mobile-menu-link" href="../services/">Services</a><a class="mobile-menu-link is-active" href="../gallery/">Gallery</a><a class="mobile-menu-link" href="../contact/">Contact</a><a class="mobile-menu-link mobile-menu-cta" href="../schedule-tour/">Schedule a Tour</a></div></header>
-  <main>
-    <section class="interior-hero bg-gray-50"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 py-20"><span class="section-label">Gallery</span><h1 class="mt-4 text-4xl md-text-6xl font-extrabold leading-tight">Bright visual layout for real AFH photography.</h1><p class="mt-6 text-lg text-muted max-w-3xl">Click any image to test the preserved lightbox behavior.</p></div></section>
-    <section class="py-20 bg-white"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 grid sm-grid-cols-2 lg-grid-cols-3 gap-6">
-      <picture><img class="rounded-2xl w-full aspect-4-3 object-cover photo-img transition" src="../assets/images/home-exterior.svg" alt="Exterior placeholder"></picture>
-      <picture><img class="rounded-2xl w-full aspect-4-3 object-cover photo-img transition" src="../assets/images/living-room.svg" alt="Living room placeholder"></picture>
-      <picture><img class="rounded-2xl w-full aspect-4-3 object-cover photo-img transition" src="../assets/images/bedroom.svg" alt="Bedroom placeholder"></picture>
-      <picture><img class="rounded-2xl w-full aspect-4-3 object-cover photo-img transition" src="../assets/images/dining-area.svg" alt="Dining area placeholder"></picture>
-      <picture><img class="rounded-2xl w-full aspect-4-3 object-cover photo-img transition" src="../assets/images/accessible-bathroom.svg" alt="Accessible bathroom placeholder"></picture>
-      <picture><img class="rounded-2xl w-full aspect-4-3 object-cover photo-img transition" src="../assets/images/outdoor-space.svg" alt="Outdoor space placeholder"></picture>
-    </div></section>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-mobile-nav>
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="Rahwa Elderly Care home">
+        <img src="../assets/logos/rahwa-logo-horizontal.png" alt="Rahwa Elderly Care logo">
+      </a>
+      <div class="desktop-nav" aria-label="Primary links">
+        <a class="nav-link" href="../">Home</a>
+        <a class="nav-link" href="../about/">About</a>
+        <a class="nav-link" href="../services/">Services</a>
+        <a aria-current="page" class="nav-link is-active" href="../gallery/">Gallery</a>
+        <a class="nav-link" href="../contact/">Contact</a>
+      </div>
+      <a class="btn btn-primary header-cta" href="../schedule-tour/">Schedule a Tour</a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a class="mobile-menu-link" href="../">Home</a>
+      <a class="mobile-menu-link" href="../about/">About</a>
+      <a class="mobile-menu-link" href="../services/">Services</a>
+      <a aria-current="page" class="mobile-menu-link is-active" href="../gallery/">Gallery</a>
+      <a class="mobile-menu-link" href="../schedule-tour/">Schedule Tour</a>
+      <a class="mobile-menu-link" href="../contact/">Contact</a>
+      <a class="mobile-menu-link muted-link" href="../privacy-policy/">Privacy Policy</a>
+      <a class="mobile-menu-link muted-link" href="../terms/">Terms</a>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero"><img src="../assets/images/rahwa-covered-patio.png" alt=""><div><span class="eyebrow">Rahwa Elderly Care</span><h1>Gallery</h1><p>Explore the warm living spaces, modern kitchen, dining area, comfortable rooms, accessible bathrooms, and outdoor patio at Rahwa Elderly Care.</p></div></section>
+    <section class="section">
+      <div class="gallery-grid">
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-exterior-front-home.png" alt="Exterior front home view at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-covered-patio.png" alt="Covered patio and deck at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-patio-seating.png" alt="Outdoor patio seating at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-living-room-comfortable-seating.png" alt="Comfortable living room seating at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-open-living-kitchen.png" alt="Open living and kitchen space at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-modern-kitchen.png" alt="Modern kitchen at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-dining-room.png" alt="Dining room at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-private-bedroom-bright-room.png" alt="Bright private bedroom at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-accessible-bathroom-main.png" alt="Accessible bathroom with grab bars at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-accessible-restroom-wide-view.png" alt="Wide accessible restroom view at Rahwa Elderly Care"></button>
+        <button class="gallery-item" type="button"><img src="../assets/images/rahwa-accessible-bathroom-shower.png" alt="Accessible shower area at Rahwa Elderly Care"></button>
+      </div>
+    </section>
+
   </main>
-  <footer class="site-footer bg-ink text-white py-12"><div class="mx-auto max-w-7xl px-4 sm-px-6 lg-px-8 footer-bottom"><p>&copy; 2026 {{BUSINESS_NAME}}.</p><p><a href="../privacy-policy/">Privacy Policy</a> <span>|</span> <a href="../terms/">Terms</a></p></div></footer>
-  <script src="../assets/js/site.js"></script>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/logos/rahwa-logo-horizontal.png" alt="Rahwa Elderly Care logo">
+        <p>Rahwa Elderly Care provides CNA-led, hands-on support in a warm Auburn adult family home with private and shared room options.</p>
+        <p class="design-credit"><a href="https://webdesignsbysam.com" target="_blank" rel="noopener">Website design by Sam</a></p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <a href="tel:+12064898822">(206) 489-8822</a>
+        <a href="mailto:rahwaelderlycare@gmail.com">rahwaelderlycare@gmail.com</a>
+        <span>2011 4th St SE, Auburn, WA 98002</span>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="../about/">About</a>
+        <a href="../services/">Services</a>
+        <a href="../gallery/">Gallery</a>
+        <a href="../schedule-tour/">Schedule Tour</a>
+      </div>
+      <div>
+        <h2>Care & Rooms</h2>
+        <span>CNA-led care</span>
+        <span>4 private rooms</span>
+        <span>2 shared rooms</span>
+        <span>Accessible bathroom features</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Rahwa Elderly Care. All rights reserved.</span>
+      <span><a href="../privacy-policy/">Privacy Policy</a> <a href="../terms/">Terms</a></span>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js" defer></script>
 </body>
 </html>

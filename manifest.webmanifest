@@ -1,0 +1,12 @@
+{
+  "name": "Rahwa Elderly Care",
+  "short_name": "Rahwa Care",
+  "description": "CNA-led adult family home care in Auburn, WA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#155b8c",
+  "icons": [
+    { "src": "/assets/logos/rahwa-logo-icon.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}
