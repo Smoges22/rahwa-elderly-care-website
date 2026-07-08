@@ -35,6 +35,6 @@ Replace that placeholder with the deployed Google Apps Script Web App URL when t
 
 ## Deployment Notes
 
-- Domain is not ready yet, so canonical links are relative paths.
-- `vercel.json`, `robots.txt`, `sitemap.xml`, `manifest.webmanifest`, and favicon assets are included for future deployment.
+- Production domain is `rahwaelderlycare.com`, so canonical links, `robots.txt`, and `sitemap.xml` use absolute production URLs.
+- `vercel.json`, `robots.txt`, `sitemap.xml`, `manifest.webmanifest`, and favicon assets are included for deployment.
 - Forms use the Google Apps Script placeholder and local preview fallback only.

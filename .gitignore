@@ -1,5 +1,6 @@
 test-results/
 playwright-report/
 node_modules/
+client-assets/
 .DS_Store
 *.log
