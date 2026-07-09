@@ -1,6 +1,6 @@
 (function () {
   // Paste the deployed Google Apps Script Web App URL here after completing automation/GOOGLE-SHEET-FORM-SETUP.md.
-  const GOOGLE_SCRIPT_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxn7zd9aE6V_OekUMudW0_RzyZetp7ndDiDybILxCLXeS60rMaUpzZZDRUyOsMEVaiB/exec";
 
   function initMobileNav() {
     const header = document.querySelector("[data-mobile-nav]");
