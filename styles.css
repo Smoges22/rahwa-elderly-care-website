@@ -155,6 +155,13 @@ h1 { font-size: clamp(2.25rem, 4.4vw, 4.35rem); max-width: 760px; margin-top: .8
 .gallery-item:hover { transform: translateY(-5px); border-color: rgba(14,136,200,.34); box-shadow: 0 32px 82px rgba(6,74,122,.18); }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .22s ease; border-radius: calc(var(--radius-lg) - 5px); }
 .gallery-item:hover img { transform: scale(1.035); }
+/* Keep the full room visible within the existing landscape image frames. */
+.gallery-item img[src$=".webp"],
+.feature-grid img[src$=".webp"] { height: auto; }
+.gallery-item img[src*="rahwa-private-bedroom-"],
+.gallery-item img[src*="rahwa-accessible-bathroom-updated"],
+.feature-grid img[src*="rahwa-private-bedroom-"],
+.image-card img[src*="rahwa-accessible-bathroom-updated"] { object-fit: contain; background: var(--sky); }
 .gallery-item > span { display: grid; gap: .3rem; padding: 1rem .8rem .75rem; color: var(--blue-dark); font-weight: 900; line-height: 1.25; }
 .gallery-item small { color: var(--gold); text-transform: uppercase; letter-spacing: .07em; font-size: .72rem; }
 .form-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: start; }

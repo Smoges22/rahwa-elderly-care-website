@@ -110,7 +110,7 @@
     const lightboxImg = lightbox.querySelector("img");
     const close = lightbox.querySelector("button");
     function open(img) {
-      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.src = img.src;
       lightboxImg.alt = img.alt || "Expanded Rahwa Elderly Care photo";
       lightbox.hidden = false;
       close.focus();
